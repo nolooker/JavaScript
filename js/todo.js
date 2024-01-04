@@ -3,7 +3,7 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
-const toDos = [];
+let toDos = [];
 
 const TODOS_KEY = "todos";
 
@@ -14,18 +14,24 @@ function saveToDos() {
 
 function deleteToDo(event) {
     const li = event.target.parentElement;
+    // console.log(li.id);
     li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+
+    saveToDos();
 
     // console.log(event.target.parentElement);
 
 }
 
 function paintToDo(newTodo) {
-    console.log("paint", newTodo);
+    // console.log("paint", newTodo);
     
     const li = document.createElement("li");
+    li.id = newTodo.id;
+
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     
     const button = document.createElement("button");
     button.innerText = "Click";
@@ -45,20 +51,38 @@ function handleToDoSubmit(event) {
     const newTodo = toDoInput.value;
 
     toDoInput.value = "";  // 빈값으로 초기화
-    toDos.push(newTodo);
-    paintToDo(newTodo);
+
+    const newTodoObj = {
+        text: newTodo,
+        id: Date.now()
+    }
+
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
     saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
-function sayHello(item) {
-    console.log("hello", item);
+// function sayHello(item) {
+//     console.log("this is the trun of ", item);
+// }
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if(savedToDos !== null) {
+ 
+    const parsedToDos = JSON.parse(savedToDos);
+
+    toDos = parsedToDos;
+
+    console.log(parsedToDos);
+    // parsedToDos.forEach(sayHello);
+    // parsedToDos.forEach((item) => console.log("this is the trun of", item));  // function을 간략하게 나타냄
+
+    parsedToDos.forEach(paintToDo);
 }
 
-const saveToDos = localStorage.getItem(TODOS_KEY);
-
-if(saveToDos !== null) {
-    const parsedToDos = JSON.parse(saveToDos);
-    parsedToDos.forEach(sayHello);
+function Filter(todo) {
+    return todo.id !== todo.id;
 }
