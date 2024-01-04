@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css 연결 -->
+    <link rel="stylesheet" href="style.css">
+    <title>Seott</title>
+</head>
+<body>
+    <!-- 
+        input 사용시 form으로 묶어야 함 
+        required maxlength 시 자동적으로 브라우저에서 적용
+
+        submit 시 브라우저는 바로 새로고침을 함
+        그걸 script.js function에서 preventDefault()로 막아줄 수 있음.
+     -->
+
+    <form id="login">
+        <input 
+            required
+            maxlength="10"
+            type="text"
+            placeholder="Write your name."
+        />
+        <input type="submit" value="Log In" />
+    </form>
+
+    <!-- script.js 연결 -->
+    <script src="script.js"></script>
+</body>
+</html>

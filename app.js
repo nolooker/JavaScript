@@ -6,6 +6,7 @@ const greeting = document.querySelector("#greeting");
 const link = document.querySelector("a");
 
 const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
 function onLoginSubmit(event) {
     // console.dir(loginInput);
@@ -15,7 +16,7 @@ function onLoginSubmit(event) {
     event.preventDefault();  // html submit 시 새로고침 되는 브라우저 새로 고침을 막는다. 쉽게말해 브라우저 기본동작을 막음
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
-
+    localStorage.setItem(USERNAME_KEY, username);
     //greeting.innerText = "Hello " + username;
     greeting.innerText = `Hello ${username}`;
     console.log(username);
@@ -29,6 +30,20 @@ function handleLinkClick(event) {
     alert("clicked");
 }
 
-
-loginForm.addEventListener("submit", onLoginSubmit);
 link.addEventListener("click", handleLinkClick);
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+console.log(savedUsername);
+
+if(savedUsername === null) {
+    // show the form
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+    // show the greetings
+
+    greeting.innerText = `Hello ${savedUsername}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+    
+}
