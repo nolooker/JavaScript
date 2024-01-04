@@ -4,26 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css 연결 -->
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="css/style.css"> 
     <title>Mometum</title>
 </head>
 <body>
     <!-- <h1 autofocus class="hello" id="title">Grab me!</h1> -->
 
     <form id="login-form" class="hidden">
-        <input 
+        <input
             required 
             maxlength="15" 
             type="text" 
-            placeholder="What is your name?" 
+            placeholder="What is your name?"
         />
-        <input type="submit" value="Log In" />
+        <input type="submit" value="Log In" /> 
     </form>
+
+    <h2 id="clock">00:00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
-    <a href="https://seott.netlify.app">Go to page!</a>
+    <form id="todo-form">
+        <input type="text" placeholder="Write a To Do and Press Enter" required />
+    </form>
+    <ul id="todo-list">
+        <!-- js -->
+        <!-- <span>text</span> -->
+        <!-- <button>X</button> -->
+    </ul>
+
+    <div id="quote">
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- <img src="img/0.jpg" /> hard coding-->
+
+    <a href="https://seott.netlify.app">Go to Page!</a>
 
     <!-- script 연결 -->
-    <script src="app.js"></script>
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
 
 </body>
 </html>
