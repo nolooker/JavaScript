@@ -10,11 +10,12 @@ const chosenImage = images[Math.floor(Math.random() * images.length)];
 
 const bgImage = document.createElement("img");
 
-console.log(chosenImage);
+// console.log(chosenImage);
 
 // console.log(bgImage);
 
 bgImage.src = `img/${chosenImage}`;
+bgImage.classList.add("bgImage");  // class 적용
 
 // console.log(bgImage);
 
