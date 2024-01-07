@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css 연결 -->
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
+
     <title>Mometum</title>
 </head>
 <body>
+
+    <!-- 사이드메뉴 -->
+    <div class="sidemenu">
     <!-- <h1 autofocus class="hello" id="title">Grab me!</h1> -->
-    <a href="https://seott.netlify.app">Go to Page!</a>
+
+        <!-- MyHomePage -->
+        <a href="https://seott.netlify.app">Go to MyPage!</a>
+    </div>
     
+    <!-- 회원등록 -->
     <form id="login-form" class="hidden">
         <input
             required 
@@ -21,36 +29,59 @@
         <input type="submit" value="Log In" /> 
     </form>
 
-    <h2 id="clock">00:00:00</h2>
+    <!-- 시계 -->
+    <h2 id="clock">
+        <span></span>
+        :
+        <span></span>
+        :
+        <span></span>
+    </h2>
+    
+    <!-- 할 일 등록 -->
     <h1 id="greeting" class="hidden"></h1>
         <form id="todo-form">
             <input type="text" placeholder="Write a To Do and Press Enter" required />
         </form>
+    
+    <!-- 해야할 일 -->
     <ul id="todo-list">
         <!-- js -->
         <!-- <span>text</span> -->
         <!-- <button>X</button> -->
     </ul>
 
+    <!-- 명언 -->
     <div id="quote">
         <span></span>
     </br>
         <span></span>
     </div>
 
+    <!-- 날씨 -->
     <div id="weather">
         <span></span>
         <span></span>
     </div>
 
-    <!-- <img src="img/0.jpg" /> hard coding-->
+    <!-- <img src="img/0.jpg" /> hard coding -->
 
     <!-- script 연결 -->
+        <!-- 개인보호.js -->
+    <script src="js/private.js"></script>
+        <!-- 개인보호check.js -->
+    <script src="js/check.js"></script>
+        <!-- 회원등록.js -->
     <script src="js/greetings.js"></script>
+        <!-- 시계등록.js -->
     <script src="js/clock.js"></script>
+        <!-- 명언등록.js -->
     <script src="js/quotes.js"></script>
+        <!-- 배경등록.js -->
     <script src="js/background.js"></script>
+        <!-- 할일등록.js -->
     <script src="js/todo.js"></script>
+        <!-- 날씨.js -->
     <script src="js/weather.js"></script>
 
 </body>

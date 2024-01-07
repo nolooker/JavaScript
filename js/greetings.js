@@ -30,13 +30,13 @@ function onLoginSubmit(event) {
 function handleLinkClick(event) {
     // event.preventDefault();
     console.log(event);
-    alert("clicked");
+    // alert("clicked");
 }
 
 link.addEventListener("click", handleLinkClick);
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
-console.log(savedUsername);
+// console.log(savedUsername);
 
 function paintGreetings(username) {
     // const username = localStorage.getItem(USERNAME_KEY);

@@ -1,9 +1,12 @@
-const clock = document.querySelector("h2#clock");
+// const clock = document.querySelector("h2#clock");
+
+const clockH = document.querySelector("h2#clock span:first-child");
+const clockM = document.querySelector("h2#clock span:nth-child(2)");
+const clockS = document.querySelector("h2#clock span:last-child");
 
 // clock.innerText = "lalala";
 
 // interval '매번' 일어나야 하는 무언가
-
 
 function sayHello() {
     console.log("Hello");
@@ -21,7 +24,10 @@ function getClock() {  // 시간을 구하는 function
     const minutes = String(date.getMinutes()).padStart(2,"0");  // padStart (length, "")
     const seconds = String(date.getSeconds()).padStart(2,"0");  // 기존의 string보다 원하는 길이가 더 길때 사용
 
-    clock.innerText = `${hours}:${minutes}:${seconds}`; // 시:분:초
+    // clock.innerText = `${hours}:${minutes}:${seconds}`; // 시:분:초
+    clockH.innerText = `${hours}`;
+    clockM.innerText = `${minutes}`;
+    clockS.innerText = `${seconds}`;
 }
 
 getClock();  // load 되자마자 바로 나타나게 하기

@@ -15,3 +15,12 @@
 h1,h2,span {
     color: white;
 }
+
+a {
+    color: white;
+}
+
+#clock span:last-child {
+    color: #fffb00;
+    padding: 0 -10px;
+  }

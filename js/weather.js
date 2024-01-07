@@ -1,4 +1,6 @@
-const API_KEY = "93ed1557e49337bc4bcc4c4fea7e0877";
+// const API_KEY => private.js ;
+
+// globalVariable.API_KEY;
 
 const city = document.querySelector("#weather span:first-child");
 const weather = document.querySelector("#weather span:last-child");
@@ -9,9 +11,9 @@ function onGeoOk(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
 
-    console.log("You live in", lat, lon);
+    // console.log("You live in", lat, lon);
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${globalVariable.API_KEY}&units=metric`;
 
     // console.log(url);
 
