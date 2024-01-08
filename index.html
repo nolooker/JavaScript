@@ -12,23 +12,21 @@
 
     <!-- 사이드메뉴 -->
     <div class="sidemenu">
-    <!-- <h1 autofocus class="hello" id="title">Grab me!</h1> -->
-
-        <!-- MyHomePage -->
-        <a href="https://seott.netlify.app">Go to MyPage!</a>
+            <!-- MyHomePage -->
+            <a href="https://seott.netlify.app">Go to MyPage!</a>
+    
+        <!-- 회원등록 -->
+            <form id="login-form" class="hidden">
+                <input
+                    required 
+                    maxlength="15" 
+                    type="text" 
+                    placeholder="What is your name?"
+                />
+                <input type="submit" value="Log In" /> 
+            </form>
     </div>
     
-    <!-- 회원등록 -->
-    <form id="login-form" class="hidden">
-        <input
-            required 
-            maxlength="15" 
-            type="text" 
-            placeholder="What is your name?"
-        />
-        <input type="submit" value="Log In" /> 
-    </form>
-
     <!-- 시계 -->
     <h2 id="clock">
         <span></span>
